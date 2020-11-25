@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyLogger", "KeyLogger\KeyLogger.csproj", "{8CAD5680-08CE-4DAD-808B-E0A8461AA291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{399B6082-EF27-4EE3-BF3C-B66EE1C631D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyLoggerWpf", "KeyLoggerWpf\KeyLoggerWpf.csproj", "{8EE22565-A3DE-4565-AEA7-43EC89754203}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CAD5680-08CE-4DAD-808B-E0A8461AA291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CAD5680-08CE-4DAD-808B-E0A8461AA291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CAD5680-08CE-4DAD-808B-E0A8461AA291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CAD5680-08CE-4DAD-808B-E0A8461AA291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{399B6082-EF27-4EE3-BF3C-B66EE1C631D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399B6082-EF27-4EE3-BF3C-B66EE1C631D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399B6082-EF27-4EE3-BF3C-B66EE1C631D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399B6082-EF27-4EE3-BF3C-B66EE1C631D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE22565-A3DE-4565-AEA7-43EC89754203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE22565-A3DE-4565-AEA7-43EC89754203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE22565-A3DE-4565-AEA7-43EC89754203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE22565-A3DE-4565-AEA7-43EC89754203}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88C9756F-EDD5-4554-91CB-5E3239DEA3B9}
+	EndGlobalSection
+EndGlobal

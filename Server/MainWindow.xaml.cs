@@ -86,6 +86,8 @@ namespace Server
 
                             var p = new Package() { Char =  ss[1], Date =  DateTime.Now.ToLongTimeString(), MachineName =  ss[2],OS = ss[3] };
 
+                            File.AppendAllText("File.txt", ss[1] + " " + DateTime.Now.ToLongTimeString() + " " + ss[2] + " " + ss[3] + "\n");
+
                             Dispatcher.Invoke(() => { packages.Add(p); });
                             
 

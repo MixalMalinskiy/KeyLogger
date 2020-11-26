@@ -10,10 +10,11 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-
-        <DataGrid Grid.RowSpan="2" ItemsSource="{Binding Packages}">
+        <Button Click="Button_Click" Margin="0,0,557,0">Hide Window</Button>
+        <DataGrid Grid.Row="1" Grid.RowSpan="2" ItemsSource="{Binding Packages}">
             <DataGrid.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
@@ -36,7 +37,8 @@
                
             
             </DataGrid>
-       
+        <Button Margin="335,0,222,0" Content="Hide Window" Click="Button_Click_1"/>
+
 
 
 

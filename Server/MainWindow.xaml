@@ -18,13 +18,13 @@
             <DataGrid.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        
-                        
-                       
+
+
+
                         <TextBlock Text="{Binding Char}"/>
                         <TextBlock Text="     "></TextBlock>
                         <TextBlock Text="{Binding Date}"></TextBlock>
-                        
+
                         <TextBlock Text="     "></TextBlock>
                         <TextBlock Text="{Binding MachineName}"></TextBlock>
 
@@ -33,11 +33,11 @@
                     </StackPanel>
                 </DataTemplate>
             </DataGrid.ItemTemplate>
-            
-               
-            
-            </DataGrid>
-        <Button Margin="335,0,222,0" Content="Hide Window" Click="Button_Click_1"/>
+
+
+
+        </DataGrid>
+        <Button Margin="335,0,222,0" Content="Show All File Txt" Click="Button_Click_1"/>
 
 
 

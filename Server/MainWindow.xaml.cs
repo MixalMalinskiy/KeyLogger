@@ -34,10 +34,11 @@ namespace Server
         TcpListener listener = new TcpListener(IPAddress.Parse("127.0.0.1"),10000);
         CancellationTokenSource source;
         Task recieveTask;
+        PackegeContext db = new PackegeContext();
         ObservableCollection<Package> packages = new ObservableCollection<Package>();
 
         System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
-        XmlSerializer formatter = new XmlSerializer(typeof(Package[]));
+        XmlSerializer formatter = new XmlSerializer(typeof(Package));
 
 
         public MainWindow()
@@ -101,22 +102,31 @@ namespace Server
 
 
 
-                            FileStream fs = new FileStream("Packeges.xml",FileMode.OpenOrCreate);
 
+                          
                             // eror
                             var p = new Package() { Char = ss[1], Date = DateTime.Now.ToLongTimeString(), MachineName = ss[2], OS = ss[3] };
                             File.AppendAllText("File.txt", ss[1] + " " + DateTime.Now.ToLongTimeString() + " " + ss[2] + " " + ss[3] + "\n");
-                            formatter.Serialize(fs, p);
+                           
                             Dispatcher.Invoke(() => { packages.Add(p); });
-                            
-                            
-                            
-
-                            
-                            
-
                            
                            
+
+
+
+                                    db.Packages.Add(p);
+                                    db.SaveChanges();
+                           
+                            
+                                                       
+
+
+
+
+
+
+
+
 
 
                         }
@@ -141,7 +151,26 @@ namespace Server
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+           // db.Dispose();
+            foreach (var item in db.Packages)
+            {
+                var p = new Package() { Char = item.Char, Date = item.Date, MachineName = item.MachineName, OS = item.OS};
+                //File.AppendAllText("File.txt", ss[1] + " " + DateTime.Now.ToLongTimeString() + " " + ss[2] + " " + ss[3] + "\n");
 
+                Dispatcher.Invoke(() => { packages.Add(p); });
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in db.Packages)
+            {
+                var p = new Package() { Char = item.Char, Date = item.Date, MachineName = item.MachineName, OS = item.OS };
+                //File.AppendAllText("File.txt", ss[1] + " " + DateTime.Now.ToLongTimeString() + " " + ss[2] + " " + ss[3] + "\n");
+
+                Dispatcher.Invoke(() => { packages.Remove(p); });
+                 
+            }
         }
     }
 }
